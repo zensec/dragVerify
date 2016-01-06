@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{margin:0;padding:0}
+
+        .wrap{position:relative;width:380px;white-space:normal;font-size: 0}
+
+        .valid-img{display:inline-block;width:{{data.divsW}}px;height:{{data.divsH}}px;background-image:url({{data.divsImg}});}
+
+        .cropimg{position:absolute;top:{{data.cropImgT}}px;left:0;width:{{data.cropImgW}}px;height:{{data.cropImgH}}px;background:url({{data.cropImg}})}
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div id="crop" class="cropimg"></div>
+    {% for key, val in data.divs %}
+    <div class="valid-img" style="background-position: {{val.x}} {{val.y}}"></div>
+    {% endfor %}
+</div>
+</body>
+</html>
